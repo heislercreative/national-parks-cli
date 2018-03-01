@@ -19,6 +19,7 @@ class NationalParks::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
+      
       if input.to_i > 0
         puts @states[input.to_i-1]
       elsif input == "states"

@@ -7,7 +7,7 @@ class NationalParks::CLI
   end
 
   def list_parks
-    puts <<-DOC
+    puts <<-DOC.gsub /^\s*/, ''
       1. Alabama
       2. Alaska
     DOC

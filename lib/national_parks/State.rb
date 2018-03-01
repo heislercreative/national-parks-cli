@@ -2,10 +2,11 @@ class NationalParks::State
   attr_accessor :name, :url
 
   def self.all
-    # puts <<-DOC.gsub /^\s*/, ''
-    #   1. Alabama
-    #   2. Alaska
-    # DOC
+    #Scrape state index page and return state names & urls
+    self.scrape_states
+  end
+
+  def self.scrape_states
     state_1 = self.new
     state_1.name = "Alabama"
     state_1.url = "https://www.nps.gov/state/al/index.htm"

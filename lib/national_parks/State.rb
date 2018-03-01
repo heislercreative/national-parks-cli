@@ -1,4 +1,5 @@
 class NationalParks::State
+  attr_accessor :name, :url
 
   def self.all
     puts <<-DOC.gsub /^\s*/, ''

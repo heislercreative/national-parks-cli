@@ -13,6 +13,7 @@ class NationalParks::CLI
       1. Alabama
       2. Alaska
     DOC
+    @states = NationalParks::State.all
   end
 
   def state_menu

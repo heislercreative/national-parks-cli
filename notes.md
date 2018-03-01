@@ -21,7 +21,9 @@
 -- scrape state page for details --
 
 Name (Type)
+
 -Location
+
   Description
 
 "Type 'Parks' to see more parks."

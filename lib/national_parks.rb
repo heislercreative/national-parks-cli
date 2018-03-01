@@ -1,5 +1,2 @@
-require "national_parks/version"
-
-module NationalParks
-  # Your code goes here...
-end
+require_relative "./national_parks/version"
+require_relative "./national_parks/cli"

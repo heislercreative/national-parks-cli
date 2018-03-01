@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "Hello world!"
+require './lib/national_parks'
+
+NationalParks::CLI.new.call

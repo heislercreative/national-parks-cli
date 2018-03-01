@@ -19,12 +19,9 @@ class NationalParks::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "List of Alabama Parks"
-      when "2"
-        puts "List of Alaska Parks"
-      when "states"
+      if input.to_i > 0
+        puts @states[input.to_i-1]
+      elsif input == "states"
         list_states
       else
         puts "Please select a valid state or territory."

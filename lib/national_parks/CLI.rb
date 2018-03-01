@@ -10,6 +10,7 @@ class NationalParks::CLI
   def list_states
     puts "Welcome to the National Park Service!"
     @states = NationalParks::State.all
+    @states.each.with_index(1) { |state, i| puts "#{i}. #{state}"}
   end
 
   def state_menu
@@ -19,7 +20,7 @@ class NationalParks::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      
+
       if input.to_i > 0
         puts @states[input.to_i-1]
       elsif input == "states"

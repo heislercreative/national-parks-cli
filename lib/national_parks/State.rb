@@ -26,7 +26,8 @@ class NationalParks::State
     # state_2.name = "Alaska"
     # state_2.url = "/state/ak/index.htm"
 
-    states
+   states.sort_by!{|s| s[:name]}
+   states
   end
 
 end

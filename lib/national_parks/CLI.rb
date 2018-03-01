@@ -9,10 +9,6 @@ class NationalParks::CLI
 
   def list_states
     puts "Welcome to the National Park Service!"
-    puts <<-DOC.gsub /^\s*/, ''
-      1. Alabama
-      2. Alaska
-    DOC
     @states = NationalParks::State.all
   end
 

@@ -29,6 +29,8 @@ class NationalParks::CLI
         puts "List of Alaska Parks"
       when "states"
         list_states
+      else
+        puts "Please select a valid state or territory."
       end
     end
   end

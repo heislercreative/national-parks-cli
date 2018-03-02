@@ -6,15 +6,15 @@ class NationalParks::Park
     @state_name = parks_page.css("h1.page-title").text.upcase
   end
 
-  def self.all
+  def self.all(state_url)
     #Scrape state parks page and return park names, types, locations, & descriptions
-    self.scrape_parks
+    self.scrape_parks(state_url)
   end
 
-  def self.scrape_parks
+  def self.scrape_parks(state_url)
     parks = []
 
-    parks_page = Nokogiri::HTML(open("https://www.nps.gov/state/co/index.htm")) #replace with interpolated state url
+    parks_page = Nokogiri::HTML(open(state_url)) #replace with interpolated state url
 
     park_list = parks_page.css("div.col-md-9.col-sm-9.col-xs-12.table-cell.list_left")
 

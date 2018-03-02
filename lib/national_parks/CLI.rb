@@ -76,6 +76,8 @@ class NationalParks::CLI
         list_parks(choice)
       elsif input == "states"
         list_states
+      elsif input == "exit"
+        goodbye
       else
         puts "Please select a valid state or territory."
       end

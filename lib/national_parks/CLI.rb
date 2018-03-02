@@ -6,7 +6,6 @@ class NationalParks::CLI
   def call
     welcome
     list_states
-    goodbye
   end
 
   # Greetings #
@@ -19,6 +18,7 @@ class NationalParks::CLI
 
   def goodbye
     puts "Hope to see you again soon!"
+    exit
   end
 
 
@@ -38,7 +38,7 @@ class NationalParks::CLI
     if input.to_i > 0
       list_parks(input.to_i-1)
     elsif input == "exit"
-      exit
+      goodbye
     else
       puts "Please select a valid state or territory."
     end

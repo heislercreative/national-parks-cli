@@ -18,13 +18,6 @@ class NationalParks::State
       
       states << {name: state_name, url: state_url}
     end
-    # state_1 = self.new
-    # state_1.name = "Alabama"
-    # state_1.url = "/state/al/index.htm"
-    #
-    # state_2 = self.new
-    # state_2.name = "Alaska"
-    # state_2.url = "/state/ak/index.htm"
 
   states.sort_by!{|s| s[:name]}
   states

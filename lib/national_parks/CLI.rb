@@ -4,14 +4,20 @@ class NationalParks::CLI
   BASE_PATH = "https://www.nps.gov"
 
   def call
+    welcome
     list_states
     state_menu
     goodbye
   end
 
+  def welcome
+    puts "                                      /\"
+    puts "                                     //\\"
+    puts "Welcome to the National Park Service!" + " ||"
+  end
+  
   # State Methods #
   def list_states
-    puts "Welcome to the National Park Service!"
     @states = NationalParks::State.all
     @states.each.with_index(1) {|state, i| puts " #{i}. #{state[:name]}"}
   end

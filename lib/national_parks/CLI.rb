@@ -1,7 +1,8 @@
 # CLI Controller
 require 'pry'
 class NationalParks::CLI
-  
+  BASE_PATH = "https://www.nps.gov"
+
   def call
     list_states
     state_menu
@@ -24,7 +25,7 @@ class NationalParks::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        list_parks
+        list_parks(input.to_i-1)
         #puts @states[input.to_i-1]
       elsif input == "states"
         list_states
@@ -35,8 +36,8 @@ class NationalParks::CLI
   end
 
   # Park Methods #
-  def list_parks
-    puts "==#{NationalParks::Park.state_name}=="
+  def list_parks(i)
+    puts "==#{NationalParks::Park.state_name(BASE_PATH + @states[i][:url])}=="
     @parks = NationalParks::Park.all
     @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
   end

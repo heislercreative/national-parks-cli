@@ -15,7 +15,7 @@ class NationalParks::State
     state_list.each do |state|
       state_name = "#{state.attr("alt")}"
       state_url = "#{state.attr("href")}"
-      
+
       states << {name: state_name, url: state_url}
     end
 

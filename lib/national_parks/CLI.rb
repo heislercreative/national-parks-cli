@@ -1,7 +1,7 @@
 # CLI Controller
 require 'pry'
 class NationalParks::CLI
-
+  
   def call
     list_states
     state_menu

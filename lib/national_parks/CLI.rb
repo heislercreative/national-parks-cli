@@ -11,9 +11,9 @@ class NationalParks::CLI
   end
 
   def welcome
-    puts "                                      /\"
-    puts "                                     //\\"
-    puts "Welcome to the National Park Service!" + " ||"
+    puts "                                      /\"  #colorize green
+    puts "                                     //\\"  #colorize green
+    puts "Welcome to the National Park Service!" + " ||"  #colorize brown
   end
   
   # State Methods #

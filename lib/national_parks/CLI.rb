@@ -31,7 +31,7 @@ class NationalParks::CLI
 
   def state_menu
     puts "Please pick a US state or territory by number."
-    puts "  Type 'exit' to leave."
+    puts "  - Type 'exit' to leave."
     input = nil
     input = gets.strip.downcase
 
@@ -57,8 +57,8 @@ class NationalParks::CLI
 
   def park_menu
     puts "Please pick a park by number for more information."
-    puts "  Type 'states' to return to the state list."
-    puts "  Type 'exit' to leave."
+    puts "  - Type 'states' to return to the states list."
+    puts "  - Type 'exit' to leave."
 
     input = nil
     while input != "exit"
@@ -67,10 +67,11 @@ class NationalParks::CLI
       if input.to_i > 0
         i = input.to_i-1
         puts ""
-        puts "#{@parks[i][:name]} #{@parks[i][:type]}"
-        puts " -#{@parks[i][:location]}-"
+        puts "#{@parks[i][:name].upcase} #{@parks[i][:type].upcase}"
+        puts "-#{@parks[i][:location]}-"
         puts "#{@parks[i][:description]}"
-        puts "  Type 'parks' to return to the parks list."
+        puts "  - Type 'parks' to return to the parks list."
+        puts "  - Type 'states' to return to the states list."
       elsif input == "parks"
         list_parks(choice)
       elsif input == "states"

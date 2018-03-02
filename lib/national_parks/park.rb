@@ -20,7 +20,7 @@ class NationalParks::Park
       parks << {name: park_name, type: park_type, location: park_location, description: park_description}
     end
     
-  puts parks
+    parks
   end
 
 end

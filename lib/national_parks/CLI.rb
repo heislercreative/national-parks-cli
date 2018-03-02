@@ -7,10 +7,11 @@ class NationalParks::CLI
     goodbye
   end
 
+  # State Methods #
   def list_states
     puts "Welcome to the National Park Service!"
     @states = NationalParks::State.all
-    @states.each.with_index(1) { |state, i| puts "#{i}. #{state.name}"}
+    @states.each.with_index(1) {|state, i| puts "#{i}. #{state.name}"}
   end
 
   def state_menu
@@ -30,6 +31,12 @@ class NationalParks::CLI
         puts "Please select a valid state or territory."
       end
     end
+  end
+  
+  # Park Methods #
+  def list_parks
+    @parks = NationalParks::Park.all
+    @parks.each.with_index(1) {|park, i| puts "#{i.} #{park.name}"}
   end
 
   def goodbye

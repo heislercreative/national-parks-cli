@@ -36,7 +36,7 @@ class NationalParks::CLI
 
     if input.to_i > 0
       list_parks(input.to_i-1)
-    elsif input != "exit"
+    elsif input == "exit"
       exit
     else
       puts "Please select a valid state or territory."
@@ -64,9 +64,11 @@ class NationalParks::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts "Name (Type)"
-        puts "-Location"
-        puts "  Description"
+        i = input.to_i-1
+        puts ""
+        puts "#{@parks[i][:name]} #{@parks[i][:type]}"
+        puts " -#{@parks[i][:location]}-"
+        puts "#{@parks[i][:description]}"
         puts "  Type 'parks' to return to the parks list."
       elsif input == "parks"
         list_parks(choice)

@@ -36,8 +36,8 @@ class NationalParks::CLI
   end
 
   # Park Methods #
-  def list_parks(i)
-    puts "==#{NationalParks::Park.state_name(BASE_PATH + @states[i][:url])}=="
+  def list_parks(choice)
+    puts "==#{NationalParks::Park.state_name(BASE_PATH + @states[choice][:url])}=="
     @parks = NationalParks::Park.all
     @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
   end

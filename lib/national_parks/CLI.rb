@@ -11,6 +11,7 @@ class NationalParks::CLI
 
   # Greetings #
   def welcome
+    puts ""
     puts "                                      /\\ "  #colorize green
     puts "                                     //\\\\"  #colorize green
     puts "Welcome to the National Park Service!" + " ||"  #colorize brown

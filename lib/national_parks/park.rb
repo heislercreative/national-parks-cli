@@ -1,8 +1,9 @@
 class NationalParks::Park
   attr_accessor :name, :type, :location, :description
+  BASE_PATH = "https://www.nps.gov"
 
   def self.state_name
-    parks_page = Nokogiri::HTML(open("https://www.nps.gov/state/co/index.htm")) #replace with interpolated state url
+    parks_page = Nokogiri::HTML(open(BASE_PATH + NationalParks::State.url)) #replace with interpolated state url
     @state_name = parks_page.css("h1.page-title").text.upcase
   end
 

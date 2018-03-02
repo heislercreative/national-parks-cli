@@ -1,4 +1,5 @@
 # CLI Controller
+require 'pry'
 class NationalParks::CLI
 
   def call
@@ -11,7 +12,7 @@ class NationalParks::CLI
   def list_states
     puts "Welcome to the National Park Service!"
     @states = NationalParks::State.all
-    @states.each.with_index(1) {|state, i| puts "#{i}. #{state.name}"}
+    @states.each.with_index(1) {|state, i| puts "#{i}. #{state[:name]}"}
   end
 
   def state_menu
@@ -32,11 +33,11 @@ class NationalParks::CLI
       end
     end
   end
-  
+
   # Park Methods #
   def list_parks
     @parks = NationalParks::Park.all
-    @parks.each.with_index(1) {|park, i| puts "#{i.} #{park.name}"}
+    @parks.each.with_index(1) {|park, i| puts "#{i}. #{park.name}"}
   end
 
   def goodbye

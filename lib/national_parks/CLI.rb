@@ -56,7 +56,7 @@ class NationalParks::CLI
   end
 
   def park_menu
-    puts "Please pick a park by number for more information."
+    puts "Please pick a park or monument by number for more information."
     puts "  - Type 'states' to return to the states list."
     puts "  - Type 'exit' to leave."
 
@@ -70,8 +70,10 @@ class NationalParks::CLI
         puts "#{@parks[i][:name].upcase} #{@parks[i][:type].upcase}"
         puts "-#{@parks[i][:location]}-"
         puts "#{@parks[i][:description]}"
+        puts ""
         puts "  - Type 'parks' to return to the parks list."
         puts "  - Type 'states' to return to the states list."
+        puts "  - Type 'exit' to leave."
       elsif input == "parks"
         list_parks(choice)
       elsif input == "states"
@@ -79,7 +81,7 @@ class NationalParks::CLI
       elsif input == "exit"
         goodbye
       else
-        puts "Please select a valid state or territory."
+        puts "Please select a valid park or monument."
       end
     end
   end

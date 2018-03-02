@@ -26,7 +26,6 @@ class NationalParks::CLI
 
       if input.to_i > 0
         list_parks(input.to_i-1)
-        #puts @states[input.to_i-1]
       elsif input == "states"
         list_states
       else
@@ -37,8 +36,10 @@ class NationalParks::CLI
 
   # Park Methods #
   def list_parks(choice)
-    puts "==#{NationalParks::Park.state_name(BASE_PATH + @states[choice][:url])}=="
-    @parks = NationalParks::Park.all
+    @chosen_state = BASE_PATH + @states[choice][:url]
+
+    puts "==#{NationalParks::Park.state_name(@chosen_state)}=="
+    @parks = NationalParks::Park.all(@chosen_state)
     @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
   end
 

@@ -6,14 +6,13 @@ class NationalParks::CLI
   def call
     welcome
     list_states
-    state_menu
     goodbye
   end
 
   # Greetings #
   def welcome
-    puts "                                      /\"  #colorize green
-    puts "                                     //\\"  #colorize green
+    puts "                                      /\\ "  #colorize green
+    puts "                                     //\\\\"  #colorize green
     puts "Welcome to the National Park Service!" + " ||"  #colorize brown
   end
 
@@ -21,11 +20,12 @@ class NationalParks::CLI
     puts "Hope to see you again soon!"
   end
 
-  
+
   # State Methods #
   def list_states
     @states = NationalParks::State.all
     @states.each.with_index(1) {|state, i| puts " #{i}. #{state[:name]}"}
+    state_menu
   end
 
   def state_menu

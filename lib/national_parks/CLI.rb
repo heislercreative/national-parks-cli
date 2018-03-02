@@ -68,17 +68,8 @@ class NationalParks::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        i = input.to_i-1
-        puts ""
-        puts "=================================================="
-        puts ""
-        puts "#{@parks[i][:name].upcase} #{@parks[i][:type].upcase}"
-        puts "-#{@parks[i][:location]}-"
-        puts "#{@parks[i][:description]}"
-        puts ""
-        puts "  - Type 'parks' to return to the parks list."
-        puts "  - Type 'states' to return to the states list."
-        puts "  - Type 'exit' to leave"
+        @i = input.to_i-1
+        dislay_parks
       elsif input == "parks"
         list_parks(@state_i)
       elsif input == "states"
@@ -89,6 +80,19 @@ class NationalParks::CLI
         puts "Please select a valid park or monument."
       end
     end
+  end
+
+  def dislay_parks
+    puts ""
+    puts "=================================================="
+    puts ""
+    puts "#{@parks[@i][:name].upcase} #{@parks[@i][:type].upcase}"
+    puts "-#{@parks[@i][:location]}-"
+    puts "#{@parks[@i][:description]}"
+    puts ""
+    puts "  - Type 'parks' to return to the parks list."
+    puts "  - Type 'states' to return to the states list."
+    puts "  - Type 'exit' to leave"
   end
 
 end

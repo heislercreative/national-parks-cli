@@ -10,11 +10,17 @@ class NationalParks::CLI
     goodbye
   end
 
+  # Greetings #
   def welcome
     puts "                                      /\"  #colorize green
     puts "                                     //\\"  #colorize green
     puts "Welcome to the National Park Service!" + " ||"  #colorize brown
   end
+
+  def goodbye
+    puts "Hope to see you again soon!"
+  end
+
   
   # State Methods #
   def list_states
@@ -40,6 +46,7 @@ class NationalParks::CLI
     end
   end
 
+
   # Park Methods #
   def list_parks(choice)
     @chosen_state = BASE_PATH + @states[choice][:url]
@@ -47,10 +54,6 @@ class NationalParks::CLI
     puts "==#{NationalParks::Park.state_name(@chosen_state)}=="
     @parks = NationalParks::Park.all(@chosen_state)
     @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
-  end
-
-  def goodbye
-    puts "Hope to see you again soon!"
   end
 
 end

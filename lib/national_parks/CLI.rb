@@ -1,5 +1,6 @@
 # CLI Controller
-require 'pry'
+require 'colorize'
+
 class NationalParks::CLI
   BASE_PATH = "https://www.nps.gov"
 
@@ -11,9 +12,9 @@ class NationalParks::CLI
   # Greetings #
   def welcome
     puts ""
-    puts "                                      /\\ "  #colorize green
-    puts "                                     //\\\\"  #colorize green
-    puts "Welcome to the National Park Service!" + " ||"  #colorize brown
+    puts "                                      /\\ ".colorize(:green)  #colorize green
+    puts "                                     //\\\\".colorize(:green)
+    puts "Welcome to the National Park Service!" + " ||".colorize(:brown)
   end
 
   def goodbye

@@ -23,8 +23,8 @@ class NationalParks::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        #list_parks
-        puts @states[input.to_i-1]
+        list_parks
+        #puts @states[input.to_i-1]
       elsif input == "states"
         list_states
       else

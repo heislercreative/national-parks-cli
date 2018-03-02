@@ -30,7 +30,6 @@ class NationalParks::CLI
 
   def state_menu
     puts "Please pick a US state or territory by number."
-    puts "  Type 'states' to return to the state list."
     puts "  Type 'exit' to leave."
     input = nil
     while input != "exit"
@@ -54,6 +53,26 @@ class NationalParks::CLI
     puts "==#{NationalParks::Park.state_name(@chosen_state)}=="
     @parks = NationalParks::Park.all(@chosen_state)
     @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
+    park_menu
+  end
+
+  def park_menu
+    puts "Please pick a park by number for more information."
+    puts "  Type 'states' to return to the state list."
+    puts "  Type 'parks' to return to the parks list."
+    puts "  Type 'exit' to leave."
+    input = nil
+    while input != "exit"
+      input = gets.strip.downcase
+
+      if input.to_i > 0
+        list_parks(input.to_i-1)
+      elsif input == "states"
+        list_states
+      else
+        puts "Please select a valid state or territory."
+      end
+    end
   end
 
 end

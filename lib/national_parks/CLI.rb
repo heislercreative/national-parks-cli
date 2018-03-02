@@ -13,7 +13,7 @@ class NationalParks::CLI
   def list_states
     puts "Welcome to the National Park Service!"
     @states = NationalParks::State.all
-    @states.each.with_index(1) {|state, i| puts "#{i}. #{state[:name]}"}
+    @states.each.with_index(1) {|state, i| puts " #{i}. #{state[:name]}"}
   end
 
   def state_menu

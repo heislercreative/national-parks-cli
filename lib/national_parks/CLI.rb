@@ -36,8 +36,9 @@ class NationalParks::CLI
 
   # Park Methods #
   def list_parks
+    puts "==#{NationalParks::Park.state_name}=="
     @parks = NationalParks::Park.all
-    @parks.each.with_index(1) {|park, i| puts "#{i}. #{park[:name]}"}
+    @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
   end
 
   def goodbye

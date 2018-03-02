@@ -66,7 +66,9 @@ class NationalParks::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        list_parks(input.to_i-1)
+        park_info(input.to_i-1)
+      elsif input == "parks"
+        list_parks
       elsif input == "states"
         list_states
       else

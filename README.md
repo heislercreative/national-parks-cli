@@ -22,10 +22,15 @@ Or install it yourself as:
 
 1) Run ./bin/national-parks
 2) Follow the CLI prompts:
+
       • Select a state by its list number to view its parks and monuments
+
       • Select a national park or monument by its list number to view its details
+      
       • Type 'states' to return to the states menu
+
       • Type 'parks' to return to the parks menu
+
       • Type 'exit' at any time to exit the CLI
 
 ## Development

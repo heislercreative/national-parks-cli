@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-1) Run ./bin/national-parks
+1) Run `national-parks`
 2) Follow the CLI prompts:
 
       • Select a state by its list number to view its parks and monuments
@@ -41,7 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/national_parks. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/heislercreative/national-parks-cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -49,4 +49,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the NationalParks project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/national_parks/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the NationalParks project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/heislercreative/national-parks-cli/blob/master/CODE_OF_CONDUCT.md).

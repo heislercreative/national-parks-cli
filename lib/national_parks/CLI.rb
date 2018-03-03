@@ -4,10 +4,12 @@ require 'colorize'
 class NationalParks::CLI
   BASE_PATH = "https://www.nps.gov"
 
+  # Basic Run #
   def call
     welcome
     list_states
   end
+
 
   # Greetings #
   def welcome

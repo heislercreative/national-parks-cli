@@ -37,15 +37,18 @@ class NationalParks::CLI
     puts "Please pick a US state or territory by number."
     puts "  - Type 'exit' to leave."
     input = nil
-    input = gets.strip.downcase
 
-    if input.to_i > 0
-      @state_i = input.to_i-1
-      list_parks(@state_i)
-    elsif input == "exit"
-      goodbye
-    else
-      puts "Please select a valid state or territory."
+    while input != "exit"
+      input = gets.strip.downcase
+
+      if input.to_i > 0
+        @state_i = input.to_i-1
+        list_parks(@state_i)
+      elsif input == "exit"
+        goodbye
+      else
+        puts "Please select a valid state or territory."
+      end
     end
   end
 

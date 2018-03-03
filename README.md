@@ -7,7 +7,7 @@ This gem allows the user to access the National Park Service's "Find a Park" via
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'national_parks'
+gem 'national-parks'
 ```
 
 And then execute:
@@ -26,7 +26,7 @@ Or install it yourself as:
       • Select a state by its list number to view its parks and monuments
 
       • Select a national park or monument by its list number to view its details
-      
+
       • Type 'states' to return to the states menu
 
       • Type 'parks' to return to the parks menu

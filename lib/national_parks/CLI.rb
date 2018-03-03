@@ -18,7 +18,9 @@ class NationalParks::CLI
   end
 
   def goodbye
-    puts "Hope to see you again soon!"
+    puts ""
+    puts "  Hope to see you again soon!"
+    puts ""
     exit
   end
 

@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "national_parks/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "national_parks"
+  spec.name          = "national-parks"
   spec.version       = NationalParks::VERSION
   spec.authors       = ["Brennan Heisler"]
   spec.email         = ["brennan@heislercreative.com"]

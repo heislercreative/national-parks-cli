@@ -17,6 +17,7 @@ class NationalParks::CLI
     puts "                                      /\\ ".colorize(:green)
     puts "                                     //\\\\".colorize(:green)
     puts "Welcome to the National Park Service!" + " ||".colorize(:black)
+    sleep(1)
   end
 
   def goodbye

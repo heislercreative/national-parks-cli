@@ -6,12 +6,12 @@ require "national_parks/version"
 Gem::Specification.new do |spec|
   spec.name          = "national_parks"
   spec.version       = NationalParks::VERSION
-  spec.authors       = ["heislercreative"]
+  spec.authors       = ["Brennan Heisler"]
   spec.email         = ["brennan@heislercreative.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{National parks}
+  spec.description   = %q{National parks by state, with location & description}
+  spec.homepage      = "http://heislercreative.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

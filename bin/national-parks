@@ -1,9 +1,8 @@
 #!/usr/bin/env ruby
 
-require './lib/national_parks'
+#require './lib/national_parks'
 # ^^ change to:
-#  require "bundler/setup"
-#  require "national_parks"
-# once gemspec is properly set up
+require "bundler/setup"
+require "national_parks"
 
 NationalParks::CLI.new.call

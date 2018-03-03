@@ -77,7 +77,7 @@ class NationalParks::CLI
 
       if input.to_i > 0
         @i = input.to_i-1
-        dislay_parks
+        display_parks
       elsif input == "parks"
         list_parks(@state_i)
       elsif input == "states"
@@ -90,7 +90,7 @@ class NationalParks::CLI
     end
   end
 
-  def dislay_parks
+  def display_parks
     puts ""
     puts "==================================================".colorize(:yellow)
     puts ""

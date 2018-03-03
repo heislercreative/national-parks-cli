@@ -12,9 +12,9 @@ class NationalParks::CLI
   # Greetings #
   def welcome
     puts ""
-    puts "                                      /\\ ".colorize(:green)  #colorize green
+    puts "                                      /\\ ".colorize(:green)
     puts "                                     //\\\\".colorize(:green)
-    puts "Welcome to the National Park Service!" + " ||".colorize(:brown)
+    puts "Welcome to the National Park Service!" + " ||".colorize(:black)
   end
 
   def goodbye
@@ -53,7 +53,7 @@ class NationalParks::CLI
     @chosen_state = BASE_PATH + @states[choice][:url]
 
     puts ""
-    puts "==#{NationalParks::Park.state_name(@chosen_state)}=="
+    puts "==".colorize(:green) + "#{NationalParks::Park.state_name(@chosen_state)}" + "==".colorize(:green)
     @parks = NationalParks::Park.all(@chosen_state)
     @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
     park_menu
@@ -85,7 +85,7 @@ class NationalParks::CLI
 
   def dislay_parks
     puts ""
-    puts "=================================================="
+    puts "==================================================".colorize(:yellow)
     puts ""
     puts "#{@parks[@i][:name].upcase} #{@parks[@i][:type].upcase}"
     puts "-#{@parks[@i][:location]}-"

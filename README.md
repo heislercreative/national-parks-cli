@@ -1,8 +1,6 @@
 # NationalParks
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/national_parks`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows the user to access the National Park Service's "Find a Park" via a CLI and presents a complete list of US states and territories, along with their associated national parks and monuments.
 
 ## Installation
 
@@ -22,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1) Run ./bin/national-parks
+2) Follow the CLI prompts:
+      • Select a state by its list number to view its parks and monuments
+      • Select a national park or monument by its list number to view its details
+      • Type 'states' to return to the states menu
+      • Type 'parks' to return to the parks menu
+      • Type 'exit' at any time to exit the CLI
 
 ## Development
 

@@ -20,6 +20,7 @@ class NationalParks::State
     end
 
   states.sort_by!{|s| s[:name]}
+  states.delete_at(4)  #Remove duplicate Arkansas entry
   states
   end
 

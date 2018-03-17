@@ -44,7 +44,7 @@ class NationalParks::CLI
     while input != "exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i < @states.length
         @state_i = input.to_i-1
         list_parks(@state_i)
       elsif input == "exit"
@@ -63,7 +63,7 @@ class NationalParks::CLI
     puts ""
     puts "==".colorize(:green) + "#{NationalParks::Park.state_name(@chosen_state)}" + "==".colorize(:green)
     @parks = NationalParks::Park.all(@chosen_state)
-    @parks.each.with_index(1) {|park, i| puts " #{i}. #{park[:name]}"}
+    @parks.each.with_index(1) {|park, i| puts " #{i}. #{park.name}"}
     park_menu
   end
 
@@ -76,7 +76,7 @@ class NationalParks::CLI
     while input != "exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i < @parks.length
         @i = input.to_i-1
         display_parks
       elsif input == "parks"
@@ -95,9 +95,9 @@ class NationalParks::CLI
     puts ""
     puts "==================================================".colorize(:yellow)
     puts ""
-    puts "#{@parks[@i][:name].upcase} #{@parks[@i][:type].upcase}"
-    puts "-#{@parks[@i][:location]}-"
-    puts "#{@parks[@i][:description]}"
+    puts "#{@parks[@i].name.upcase} #{@parks[@i].type.upcase}"
+    puts "-#{@parks[@i].location}-"
+    puts "#{@parks[@i].description}"
     puts ""
     puts "  - Type 'parks' to return to the parks list."
     puts "  - Type 'states' to return to the states list."

@@ -7,6 +7,7 @@ class NationalParks::CLI
   # Basic Run #
   def call
     welcome
+    NationalParks::State.scrape_states
     list_states
   end
 
@@ -32,7 +33,7 @@ class NationalParks::CLI
   def list_states
     @states = NationalParks::State.all
     puts ""
-    @states.each.with_index(1) {|state, i| puts " #{i}. #{state[:name]}"}
+    @states.each.with_index(1) {|state, i| puts " #{i}. #{state.name}"}
     state_menu
   end
 
@@ -44,7 +45,7 @@ class NationalParks::CLI
     while input != "exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0 && input.to_i < @states.length
+      if input.to_i > 0 && input.to_i <= @states.length
         @state_i = input.to_i-1
         list_parks(@state_i)
       elsif input == "exit"
@@ -58,7 +59,7 @@ class NationalParks::CLI
 
   # Park Methods #
   def list_parks(choice)
-    @chosen_state = BASE_PATH + @states[choice][:url]
+    @chosen_state = BASE_PATH + @states[choice].url
 
     puts ""
     puts "==".colorize(:green) + "#{NationalParks::Park.state_name(@chosen_state)}" + "==".colorize(:green)
@@ -76,7 +77,7 @@ class NationalParks::CLI
     while input != "exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0 && input.to_i < @parks.length
+      if input.to_i > 0 && input.to_i <= @parks.length
         @i = input.to_i-1
         display_parks
       elsif input == "parks"

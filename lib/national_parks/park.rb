@@ -32,7 +32,7 @@ class NationalParks::Park
       park_description = park.css("p").text
       park = self.new(name = park_name, type = park_type, location = park_location, description = park_description)
 
-      @@all << park
+      @@all.find {|p| p.name == park.name} || @@all << park
     end
     @@all
   end
